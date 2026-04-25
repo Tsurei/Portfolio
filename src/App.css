@@ -214,11 +214,35 @@ nav {
     text-align: left;
     cursor: pointer;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+    transition: 0.22s ease;
 }
 
-    .project-card.active {
-        border-color: #fde68a;
-        box-shadow: 0 0 35px rgba(253, 230, 138, 0.35);
+    /* COMMON */
+    .project-card.common:hover,
+    .project-card.common.active {
+        border-color: #94a3b8;
+        box-shadow: 0 0 24px rgba(148,163,184,0.28);
+    }
+
+    /* RARE */
+    .project-card.rare:hover,
+    .project-card.rare.active {
+        border-color: #3b82f6;
+        box-shadow: 0 0 28px rgba(59,130,246,0.35);
+    }
+
+    /* EPIC */
+    .project-card.epic:hover,
+    .project-card.epic.active {
+        border-color: #a855f7;
+        box-shadow: 0 0 30px rgba(168,85,247,0.38);
+    }
+
+    /* LEGENDARY */
+    .project-card.legendary:hover,
+    .project-card.legendary.active {
+        border-color: #f59e0b;
+        box-shadow: 0 0 34px rgba(245,158,11,0.42);
     }
 
     .project-card img {

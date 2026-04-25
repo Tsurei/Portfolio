@@ -182,7 +182,7 @@ function App() {
                     {projects.map((project, index) => (
                         <motion.button
                             key={project.title}
-                            className={`project-card ${selected.title === project.title ? "active" : ""
+                            className={`project-card ${project.rarity.toLowerCase()} ${selected.title === project.title ? "active" : ""
                                 }`}
                             onClick={() => setSelected(project)}
                             whileHover={{ y: -28, scale: 1.05 }}
