@@ -206,6 +206,10 @@ function App() {
                                     <span className={`rarity ${project.rarity.toLowerCase()}`}>
                                         {project.rarity}
                                     </span>
+
+                                    {selected.title === project.title && (
+                                        <span className="selected-badge">Selected</span>
+                                    )}
                                 </div>
 
                                 <h3>{project.title}</h3>
@@ -248,7 +252,7 @@ function App() {
                 </p>
 
                 <div className="contact-links">
-                    <a href="mailto:russpared@gmail.com">russpared@gmail.com</a>
+                    <a href="mailto:russpared@gmail.com">Email</a>
                     <a href="https://www.linkedin.com/in/russell-paredes-5b6348232/" target="_blank">
                         LinkedIn
                     </a>
