@@ -113,7 +113,7 @@ function App() {
             </header>
 
             <section className="showcase">
-                <div className="selected-card">
+                <div className={`selected-card ${selected.rarity.toLowerCase()}`}>
                     <p className="eyebrow">Selected Project</p>
                     <h2>{selected.title}</h2>
                     <p className="subtitle">
