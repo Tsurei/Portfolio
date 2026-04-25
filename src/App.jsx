@@ -70,6 +70,24 @@ const projects = [
             "Created three attack types based on how long the player held the attack input.",
         ],
     },
+
+    {
+        title: "Alkaline",
+        role: "Gameplay Programmer",
+        engine: "Unity",
+        rarity: "Rare",
+        image: "/images/alkaline.jpg",
+        itch: "https://blkysuity-sh.itch.io/alkaline",
+        tags: ["Puzzle Design", "Mechanics", "2D Platformer"],
+        description:
+            "Worked on gameplay mechanics and puzzle level design for a 2D puzzle-platformer set in a run-down space laboratory.",
+        bullets: [
+            "Developed pressure plate mechanics used for environmental puzzles and progression.",
+            "Designed complex puzzle levels focused on logic, timing, and player experimentation.",
+            "Collaborated with programmers and artists to integrate mechanics into narrative-driven gameplay.",
+        ],
+    },
+
 ];
 
 function App() {
@@ -135,12 +153,17 @@ function App() {
 
                     <div className="stats">
                         <div>
-                            <strong>3</strong>
+                            <strong>5</strong>
                             <span>Projects</span>
                         </div>
 
                         <div>
                             <strong>UE5</strong>
+                            <span>Engine</span>
+                        </div>
+
+                        <div>
+                            <strong>Unity</strong>
                             <span>Engine</span>
                         </div>
 
@@ -169,7 +192,9 @@ function App() {
 
                             <div className="card-content">
                                 <div className="card-top">
-                                    <span>{project.rarity}</span>
+                                    <span className={`rarity ${project.rarity.toLowerCase()}`}>
+                                        {project.rarity}
+                                    </span>
                                 </div>
 
                                 <h3>{project.title}</h3>
