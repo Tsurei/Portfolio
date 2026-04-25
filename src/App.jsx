@@ -92,6 +92,7 @@ const projects = [
 
 function App() {
     const [selected, setSelected] = useState(projects[0]);
+    const [hovered, setHovered] = useState(null);
 
     return (
         <main className="page">
@@ -134,7 +135,7 @@ function App() {
                         href={selected.itch}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="itch-link"
+                        className={`itch-link ${selected.rarity.toLowerCase()}`}
                     >
                         Play on Itch.io
                     </a>
@@ -185,8 +186,18 @@ function App() {
                             className={`project-card ${project.rarity.toLowerCase()} ${selected.title === project.title ? "active" : ""
                                 }`}
                             onClick={() => setSelected(project)}
+                            onMouseEnter={() => setHovered(project.title)}
+                            onMouseLeave={() => setHovered(null)}
                             whileHover={{ y: -28, scale: 1.05 }}
-                            style={{ rotate: `${(index - 1) * 7}deg` }}
+                            style={{
+                                rotate: `${(index - 1) * 7}deg`,
+                                zIndex:
+                                    hovered === project.title
+                                        ? 50
+                                        : selected.title === project.title
+                                            ? 40
+                                            : index,
+                            }}
                         >
                             <img src={project.image} alt={project.title} />
 
