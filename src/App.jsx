@@ -8,7 +8,7 @@ const projects = [
         role: "Gameplay Programmer",
         engine: "Unreal Engine 5",
         rarity: "Legendary",
-        image: "/ironrise.jpg",
+        image: "/images/ironrise.jpg",
         itch: "https://aidendes.itch.io/iron-rise",
         tags: ["Camera Systems", "Gameplay", "Blueprints"],
         description:
@@ -25,7 +25,7 @@ const projects = [
         role: "VR Gameplay Programmer",
         engine: "Unreal Engine 5",
         rarity: "Epic",
-        image: "/shipwreck.jpg",
+        image: "/images/shipwreck.jpg",
         itch: "https://aidendes.itch.io/shipwreck",
         tags: ["VR", "Target Systems", "OOP"],
         description:
@@ -42,7 +42,7 @@ const projects = [
         role: "VR Gameplay Programmer",
         engine: "Unreal Engine 5",
         rarity: "Epic",
-        image: "/trashout.jpg",
+        image: "/images/trashout.jpg",
         itch: "https://raikabe.itch.io/trash-out",
         tags: ["VR Physics", "Interaction", "Gameplay"],
         description:
@@ -51,6 +51,23 @@ const projects = [
             "Created rope magnet tool using custom Blender assets.",
             "Built VR hand controls for natural rope movement and interaction.",
             "Designed magnetic pickup systems for underwater retrieval gameplay.",
+        ],
+    },
+
+    {
+        title: "Mutant",
+        role: "Gameplay Programmer",
+        engine: "Unreal Engine 5",
+        rarity: "Rare",
+        image: "/images/mutant.jpg",
+        itch: "https://densev.itch.io/mutant",
+        tags: ["Controls", "Combat", "Charge Attacks"],
+        description:
+            "Developed player controls and charge attack behavior for a 3D top-down sci-fi shooter focused on a boss battle encounter.",
+        bullets: [
+            "Converted twin-stick controller movement to support keyboard and mouse input.",
+            "Implemented charge attack behavior that slows player movement while charging.",
+            "Created three attack types based on how long the player held the attack input.",
         ],
     },
 ];
