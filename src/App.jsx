@@ -9,43 +9,48 @@ const projects = [
         engine: "Unreal Engine 5",
         rarity: "Legendary",
         image: "/ironrise.jpg",
-        tags: ["Camera Systems", "Hazards", "Blueprints"],
+        itch: "https://aidendes.itch.io/iron-rise",
+        tags: ["Camera Systems", "Gameplay", "Blueprints"],
         description:
-            "Built gameplay systems for a team-developed action platformer vertical slice, including third-person camera behavior, modular hazards, and playtest-driven debugging.",
+            "Developed a room-based 2.5D camera system for a team-built action platformer, improving visibility, transitions, and player framing.",
         bullets: [
-            "Implemented responsive third-person camera systems",
-            "Built reusable hazard mechanics using Blueprint logic",
-            "Debugged and refined gameplay through playtesting feedback",
+            "Built Camera Manager, Camera Room, and Transition Volume Blueprint actors.",
+            "Implemented room clamping and smooth transitions between gameplay spaces.",
+            "Solved poor player visibility issues near walls and boundaries.",
         ],
     },
+
     {
         title: "Shipwreck",
         role: "VR Gameplay Programmer",
         engine: "Unreal Engine 5",
         rarity: "Epic",
         image: "/shipwreck.jpg",
-        tags: ["VR", "Target Systems", "Math Movement"],
+        itch: "https://aidendes.itch.io/shipwreck",
+        tags: ["VR", "Target Systems", "OOP"],
         description:
-            "Created VR target systems, spawning rules, and score-driven gameplay using math-based movement patterns.",
+            "Created a modular VR target system with configurable spawning and inheritance-based target classes.",
         bullets: [
-            "Built modular target behavior systems",
-            "Used math and interpolation for readable movement",
-            "Created spawning rules to support pacing and scoring",
+            "Built spawner actors with editable spawn points and pacing controls.",
+            "Created reusable target base classes with child Blueprint inheritance.",
+            "Implemented math-based movement patterns and integrated with gameplay systems.",
         ],
     },
+
     {
         title: "Trash Out!",
-        role: "VR Developer",
+        role: "VR Gameplay Programmer",
         engine: "Unreal Engine 5",
-        rarity: "Rare",
+        rarity: "Epic",
         image: "/trashout.jpg",
-        tags: ["VR Interaction", "Gameplay", "Testing"],
+        itch: "https://raikabe.itch.io/trash-out",
+        tags: ["VR Physics", "Interaction", "Gameplay"],
         description:
-            "Developed VR gameplay interactions focused on player feedback, usability, and immersive design.",
+            "Developed a VR rope magnet mechanic using custom physics and object attraction systems.",
         bullets: [
-            "Worked on VR interaction and gameplay flow",
-            "Tested and refined player experience",
-            "Improved usability through iteration",
+            "Created rope magnet tool using custom Blender assets.",
+            "Built VR hand controls for natural rope movement and interaction.",
+            "Designed magnetic pickup systems for underwater retrieval gameplay.",
         ],
     },
 ];
@@ -66,7 +71,9 @@ function App() {
                     <a href="#projects">Projects</a>
                     <a href="#skills">Skills</a>
                     <a href="#contact">Contact</a>
-                    <a href="/resume.pdf" target="_blank">Resume</a>
+                    <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                        Resume
+                    </a>
                 </nav>
             </header>
 
@@ -74,7 +81,9 @@ function App() {
                 <div className="selected-card">
                     <p className="eyebrow">Selected Project</p>
                     <h2>{selected.title}</h2>
-                    <p className="subtitle">{selected.role} • {selected.engine}</p>
+                    <p className="subtitle">
+                        {selected.role} • {selected.engine}
+                    </p>
 
                     <img src={selected.image} alt={selected.title} />
 
@@ -85,21 +94,43 @@ function App() {
                             <li key={bullet}>{bullet}</li>
                         ))}
                     </ul>
+
+                    <a
+                        href={selected.itch}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="itch-link"
+                    >
+                        Play on Itch.io
+                    </a>
                 </div>
 
                 <div className="about-panel">
                     <p className="eyebrow">Player Profile</p>
                     <h2>Gameplay Programmer</h2>
+
                     <p>
-                        I build gameplay systems with a focus on responsiveness, readability,
-                        debugging, and player experience. My background includes Unreal Engine,
-                        VR/XR projects, QA testing, and team-based game development.
+                        I build gameplay systems with a focus on responsiveness,
+                        readability, debugging, and player experience. My background
+                        includes Unreal Engine, VR/XR projects, QA testing, and team-based
+                        game development.
                     </p>
 
                     <div className="stats">
-                        <div><strong>3</strong><span>Projects</span></div>
-                        <div><strong>UE5</strong><span>Engine</span></div>
-                        <div><strong>QA</strong><span>Experience</span></div>
+                        <div>
+                            <strong>3</strong>
+                            <span>Projects</span>
+                        </div>
+
+                        <div>
+                            <strong>UE5</strong>
+                            <span>Engine</span>
+                        </div>
+
+                        <div>
+                            <strong>QA</strong>
+                            <span>Experience</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -111,7 +142,8 @@ function App() {
                     {projects.map((project, index) => (
                         <motion.button
                             key={project.title}
-                            className={`project-card ${selected.title === project.title ? "active" : ""}`}
+                            className={`project-card ${selected.title === project.title ? "active" : ""
+                                }`}
                             onClick={() => setSelected(project)}
                             whileHover={{ y: -28, scale: 1.05 }}
                             style={{ rotate: `${(index - 1) * 7}deg` }}
@@ -156,12 +188,20 @@ function App() {
             <section id="contact" className="contact">
                 <p className="eyebrow">Start Match</p>
                 <h2>Let’s connect</h2>
-                <p>Open to junior gameplay programming, QA, VR/XR, and technical design opportunities.</p>
+
+                <p>
+                    Open to junior gameplay programming, QA, VR/XR, and technical design
+                    opportunities.
+                </p>
 
                 <div className="contact-links">
                     <a href="mailto:russpared@gmail.com">russpared@gmail.com</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
+                    <a href="https://www.linkedin.com/in/russell-paredes-5b6348232/" target="_blank">
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Tsurei" target="_blank">
+                        GitHub
+                    </a>
                 </div>
             </section>
         </main>

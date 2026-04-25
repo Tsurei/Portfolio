@@ -24,6 +24,8 @@ a {
     padding: 24px;
 }
 
+/* ---------- TOP HUD ---------- */
+
 .hud {
     position: sticky;
     top: 16px;
@@ -66,19 +68,25 @@ nav {
 }
 
     nav a,
-    .contact-links a {
+    .contact-links a,
+    .itch-link {
         padding: 10px 14px;
         border: 1px solid #334155;
         border-radius: 14px;
         color: #cbd5e1;
         font-weight: 800;
+        transition: 0.2s ease;
     }
 
         nav a:hover,
-        .contact-links a:hover {
+        .contact-links a:hover,
+        .itch-link:hover {
             border-color: #67e8f9;
             color: #67e8f9;
+            background: rgba(103, 232, 249, 0.08);
         }
+
+/* ---------- MAIN SHOWCASE ---------- */
 
 .showcase {
     display: grid;
@@ -131,10 +139,22 @@ nav {
     line-height: 1.7;
 }
 
+.selected-card ul {
+    margin-top: 18px;
+    padding-left: 20px;
+}
+
 .selected-card li {
     margin: 10px 0;
     color: #e2e8f0;
 }
+
+.itch-link {
+    display: inline-block;
+    margin-top: 18px;
+}
+
+/* ---------- PROFILE STATS ---------- */
 
 .stats {
     display: grid;
@@ -160,6 +180,8 @@ nav {
         color: #94a3b8;
         font-size: 12px;
     }
+
+/* ---------- CARD HAND ---------- */
 
 .hand-section {
     margin-top: 48px;
@@ -231,10 +253,17 @@ nav {
     font-size: 14px;
 }
 
-.tags {
+/* ---------- TAGS ---------- */
+
+.tags,
+.skill-grid,
+.contact-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 8px;
+}
+
+.tags {
     margin-top: 14px;
 }
 
@@ -248,6 +277,8 @@ nav {
         font-size: 12px;
         font-weight: 700;
     }
+
+/* ---------- SKILLS ---------- */
 
 .skills,
 .contact {
@@ -266,22 +297,26 @@ nav {
         padding: 16px;
     }
 
+/* ---------- CONTACT ---------- */
+
 .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
     margin-top: 20px;
 }
+
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 900px) {
     .hud,
     .showcase {
-        flex-direction: column;
-        grid-template-columns: 1fr;
+        display: block;
     }
 
-    .hud {
-        align-items: flex-start;
+        .hud nav {
+            margin-top: 16px;
+        }
+
+    .about-panel {
+        margin-top: 24px;
     }
 
     .card-hand {
@@ -297,5 +332,12 @@ nav {
 
     .skill-grid {
         grid-template-columns: 1fr;
+    }
+
+    .selected-card h2,
+    .about-panel h2,
+    .skills h2,
+    .contact h2 {
+        font-size: 32px;
     }
 }
