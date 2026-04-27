@@ -115,6 +115,36 @@ function App() {
             </header>
 
             <section className="showcase">
+                <div className="about-panel">
+                    <p className="eyebrow">Player Profile</p>
+                    <h2>Gameplay Programmer</h2>
+
+                    <p>
+                        I build gameplay systems with a focus on responsiveness, readability,
+                        debugging, and player experience. My background includes Unreal
+                        Engine, VR/XR projects, QA testing, and team-based game development.
+                    </p>
+
+                    <div className="stats">
+                        <div>
+                            <strong>5</strong>
+                            <span>Projects</span>
+                        </div>
+                        <div>
+                            <strong>UE5</strong>
+                            <span>Engine</span>
+                        </div>
+                        <div>
+                            <strong>Unity</strong>
+                            <span>Engine</span>
+                        </div>
+                        <div>
+                            <strong>QA</strong>
+                            <span>Experience</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div className={`selected-card ${selected.rarity.toLowerCase()}`}>
                     <p className="eyebrow">Selected Project</p>
                     <h2>{selected.title}</h2>
@@ -154,35 +184,7 @@ function App() {
                     </div>
                 </div>
 
-                <div className="about-panel">
-                    <p className="eyebrow">Player Profile</p>
-                    <h2>Gameplay Programmer</h2>
-
-                    <p>
-                        I build gameplay systems with a focus on responsiveness, readability,
-                        debugging, and player experience. My background includes Unreal
-                        Engine, VR/XR projects, QA testing, and team-based game development.
-                    </p>
-
-                    <div className="stats">
-                        <div>
-                            <strong>5</strong>
-                            <span>Projects</span>
-                        </div>
-                        <div>
-                            <strong>UE5</strong>
-                            <span>Engine</span>
-                        </div>
-                        <div>
-                            <strong>Unity</strong>
-                            <span>Engine</span>
-                        </div>
-                        <div>
-                            <strong>QA</strong>
-                            <span>Experience</span>
-                        </div>
-                    </div>
-                </div>
+                
             </section>
 
             <section id="projects" className="hand-section">

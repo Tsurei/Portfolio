@@ -98,7 +98,7 @@ nav {
 
 .showcase {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1fr;
     gap: 24px;
     margin-top: 32px;
 }
@@ -292,13 +292,13 @@ nav {
 
 .project-card {
     position: relative;
-    width: 240px;
+    width: 210px;
     height: 350px;
-    margin: 0 -18px;
+    margin: 0 -14px;
     padding: 0;
     overflow: hidden;
     border: 2px solid rgba(103, 232, 249, 0.35);
-    border-radius: 28px;
+    border-radius: 22px;
     background: #020617;
     color: white;
     text-align: left;
@@ -348,7 +348,7 @@ nav {
 
     .project-card img {
         width: 100%;
-        height: 145px;
+        height: 128px;
         object-fit: cover;
     }
 
@@ -365,13 +365,13 @@ nav {
 
 .project-card h3 {
     margin: 12px 0 4px;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .project-card p {
     margin: 0;
     color: #cbd5e1;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* ---------- RARITY TAG ---------- */
@@ -630,11 +630,13 @@ nav {
     }
 
     .project-card {
-        flex: 0 0 78vw;
-        width: 78vw;
-        height: 360px;
-        max-width: 310px;
-        min-width: 240px;
+        flex: 0 0 64vw;
+        width: 64vw;
+        height: calc(64vw * 1.6);
+        max-width: 230px;
+        max-height: 370px;
+        min-width: 190px;
+        min-height: 310px;
         margin: 0;
         rotate: 0deg !important;
         scroll-snap-align: center;
