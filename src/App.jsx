@@ -11,7 +11,8 @@ const projects = [
         image: "/images/ironrise.jpg",
         itch: "https://aidendes.itch.io/iron-rise",
         video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
-        tags: ["Camera Systems", "Gameplay", "Blueprints"],
+        tags: ["Camera", "Systems"],
+        cardText: "A 2.5D action platformer about escaping an industrial facility.",
         description:
             "Developed a room-based 2.5D camera system for a team-built action platformer, improving visibility, transitions, and player framing.",
         bullets: [
@@ -28,7 +29,8 @@ const projects = [
         image: "/images/shipwreck.jpg",
         itch: "https://aidendes.itch.io/shipwreck",
         video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
-        tags: ["VR", "Target Systems", "OOP"],
+        tags: ["VR", "Targets", "OOP"],
+        cardText: "A VR arcade shooter about blasting pirates and avoiding friendly targets.",
         description:
             "Created a modular VR target system with configurable spawning and inheritance-based target classes.",
         bullets: [
@@ -45,7 +47,8 @@ const projects = [
         image: "/images/trashout.jpg",
         itch: "https://raikabe.itch.io/trash-out",
         video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
-        tags: ["VR Physics", "Interaction", "Gameplay"],
+        tags: ["VR", "Physics"],
+        cardText: "A VR physics game about fishing trash from underwater using a rope magnet.",
         description:
             "Developed a VR rope magnet mechanic using custom physics and object attraction systems.",
         bullets: [
@@ -62,7 +65,8 @@ const projects = [
         image: "/images/mutant.jpg",
         itch: "https://densev.itch.io/mutant",
         video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
-        tags: ["Controls", "Combat", "Charge Attacks"],
+        tags: ["Controls", "Combat"],
+        cardText: "A sci-fi top-down shooter focused on pyrokinetic boss combat.",
         description:
             "Developed player controls and charge attack behavior for a 3D top-down sci-fi shooter focused on a boss battle encounter.",
         bullets: [
@@ -79,7 +83,8 @@ const projects = [
         image: "/images/alkaline.jpg",
         itch: "https://blkysuity-sh.itch.io/alkaline",
         video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
-        tags: ["Puzzle Design", "Mechanics", "2D Platformer"],
+        tags: ["2D", "Puzzle", "Design"],
+        cardText: "A 2D puzzle-platformer about a robot surviving a run-down space lab.",
         description:
             "Worked on gameplay mechanics and puzzle level design for a 2D puzzle-platformer set in a run-down space laboratory.",
         bullets: [
@@ -210,12 +215,12 @@ function App() {
                                             : index,
                             }}
                         >
-                            <img src={project.image} alt={project.title} />
+                            <div className="card-art">
+                                <img src={project.image} alt={project.title} />
 
-                            <div className="card-content">
                                 <div className="card-top">
-                                    <span className={`rarity ${project.rarity.toLowerCase()}`}>
-                                        {project.rarity}
+                                    <span className={`rarity-emblem ${project.rarity.toLowerCase()}`}>
+                                        {project.rarity.charAt(0)}
                                     </span>
 
                                     {selected.title === project.title && (
@@ -223,13 +228,19 @@ function App() {
                                     )}
                                 </div>
 
-                                <h3>{project.title}</h3>
-                                <p>{project.role}</p>
-
                                 <div className="tags">
                                     {project.tags.map((tag) => (
                                         <span key={tag}>{tag}</span>
                                     ))}
+                                </div>
+                            </div>
+
+                            <div className="card-content">
+                                <h3>{project.title}</h3>
+
+                                <div className="card-ability">
+                                    <span>Ability</span>
+                                    <p>{project.cardText}</p>
                                 </div>
                             </div>
                         </motion.button>
