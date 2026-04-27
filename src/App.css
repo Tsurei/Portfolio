@@ -520,75 +520,147 @@ nav {
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 900px) {
-    .hud,
+    .page {
+        padding: 14px;
+    }
+
+    .hud {
+        display: block;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+        .hud h1 {
+            font-size: 22px;
+        }
+
+        .hud p {
+            font-size: 14px;
+        }
+
+        .hud nav {
+            margin-top: 14px;
+            gap: 8px;
+        }
+
+    nav a {
+        font-size: 14px;
+        padding: 9px 11px;
+    }
+
     .showcase {
         display: block;
     }
 
-        .hud nav {
-            margin-top: 16px;
+    .selected-card,
+    .about-panel,
+    .skills,
+    .contact {
+        border-radius: 20px;
+    }
+
+    .selected-card,
+    .about-panel {
+        padding: 18px;
+    }
+
+        .selected-card h2,
+        .about-panel h2,
+        .skills h2,
+        .contact h2 {
+            font-size: 30px;
+            line-height: 1.05;
+        }
+
+        .subtitle,
+        .description,
+        .about-panel p,
+        .contact p,
+        .selected-card li {
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .selected-card img {
+            height: 210px;
+            border-radius: 16px;
         }
 
     .about-panel {
-        margin-top: 24px;
+        margin-top: 18px;
     }
 
     .stats,
     .skill-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+        .stats div {
+            padding: 14px;
+        }
+
+    .hand-section {
+        margin-top: 34px;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .card-hand {
-        justify-content: flex-start;
-
         display: flex;
         flex-direction: row;
-        gap: 4vw;
-
+        justify-content: flex-start;
+        gap: 16px;
+        width: 100%;
         overflow-x: auto;
         overflow-y: hidden;
-
-        padding: 4vw;
+        padding: 20px 8px 28px;
         min-height: auto;
-
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
     }
 
-        .card-hand::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .card-hand::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.8);
-            border-radius: 999px;
-        }
-
-        .card-hand::-webkit-scrollbar-thumb {
-            background: rgba(103, 232, 249, 0.45);
-            border-radius: 999px;
-        }
-
     .project-card {
-        flex: 0 0 82vw;
-        width: 82vw;
-
-        height: clamp(360px, 118vw, 500px);
-
-        max-width: 340px;
-        min-width: 250px;
-
+        flex: 0 0 78vw;
+        width: 78vw;
+        height: 360px;
+        max-width: 310px;
+        min-width: 245px;
         margin: 0;
         rotate: 0deg !important;
-
         scroll-snap-align: center;
     }
 
-    .selected-card h2,
-    .about-panel h2,
-    .skills h2,
-    .contact h2 {
-        font-size: 32px;
+        .project-card h3 {
+            font-size: 24px;
+        }
+
+        .project-card p {
+            font-size: 13px;
+        }
+
+        .project-card img {
+            height: 135px;
+        }
+
+    .skills,
+    .contact {
+        margin-top: 40px;
+        padding: 20px;
+    }
+
+    .skill-grid span {
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .project-links {
+        gap: 10px;
+    }
+
+    .itch-link,
+    .video-link {
+        font-size: 14px;
+        padding: 9px 12px;
     }
 }
 
