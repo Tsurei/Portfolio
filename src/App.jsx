@@ -10,7 +10,7 @@ const projects = [
         rarity: "Legendary",
         image: "/images/ironrise.jpg",
         itch: "https://aidendes.itch.io/iron-rise",
-        video: "https://youtube.com",
+        video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
         tags: ["Camera Systems", "Gameplay", "Blueprints"],
         description:
             "Developed a room-based 2.5D camera system for a team-built action platformer, improving visibility, transitions, and player framing.",
@@ -20,7 +20,6 @@ const projects = [
             "Solved poor player visibility issues near walls and boundaries.",
         ],
     },
-
     {
         title: "Shipwreck",
         role: "VR Gameplay Programmer",
@@ -28,7 +27,7 @@ const projects = [
         rarity: "Epic",
         image: "/images/shipwreck.jpg",
         itch: "https://aidendes.itch.io/shipwreck",
-        video: "https://youtube.com",
+        video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
         tags: ["VR", "Target Systems", "OOP"],
         description:
             "Created a modular VR target system with configurable spawning and inheritance-based target classes.",
@@ -38,7 +37,6 @@ const projects = [
             "Implemented math-based movement patterns and integrated with gameplay systems.",
         ],
     },
-
     {
         title: "Trash Out!",
         role: "VR Gameplay Programmer",
@@ -46,7 +44,7 @@ const projects = [
         rarity: "Epic",
         image: "/images/trashout.jpg",
         itch: "https://raikabe.itch.io/trash-out",
-        video: "https://youtube.com",
+        video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
         tags: ["VR Physics", "Interaction", "Gameplay"],
         description:
             "Developed a VR rope magnet mechanic using custom physics and object attraction systems.",
@@ -56,7 +54,6 @@ const projects = [
             "Designed magnetic pickup systems for underwater retrieval gameplay.",
         ],
     },
-
     {
         title: "Mutant",
         role: "Gameplay Programmer",
@@ -64,7 +61,7 @@ const projects = [
         rarity: "Epic",
         image: "/images/mutant.jpg",
         itch: "https://densev.itch.io/mutant",
-        video: "https://youtube.com",
+        video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
         tags: ["Controls", "Combat", "Charge Attacks"],
         description:
             "Developed player controls and charge attack behavior for a 3D top-down sci-fi shooter focused on a boss battle encounter.",
@@ -74,7 +71,6 @@ const projects = [
             "Created three attack types based on how long the player held the attack input.",
         ],
     },
-
     {
         title: "Alkaline",
         role: "Gameplay Programmer",
@@ -82,7 +78,7 @@ const projects = [
         rarity: "Rare",
         image: "/images/alkaline.jpg",
         itch: "https://blkysuity-sh.itch.io/alkaline",
-        video: "https://youtube.com",
+        video: "https://www.youtube.com/embed/VIDEO_ID_HERE",
         tags: ["Puzzle Design", "Mechanics", "2D Platformer"],
         description:
             "Worked on gameplay mechanics and puzzle level design for a 2D puzzle-platformer set in a run-down space laboratory.",
@@ -92,12 +88,12 @@ const projects = [
             "Collaborated with programmers and artists to integrate mechanics into narrative-driven gameplay.",
         ],
     },
-
 ];
 
 function App() {
     const [selected, setSelected] = useState(projects[0]);
     const [hovered, setHovered] = useState(null);
+    const [videoOpen, setVideoOpen] = useState(false);
 
     return (
         <main className="page">
@@ -136,24 +132,26 @@ function App() {
                         ))}
                     </ul>
 
-                    <a
-                        href={selected.itch}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`itch-link ${selected.rarity.toLowerCase()}`}
-                    >
-                        Play on Itch.io
-                    </a>
+                    <div className="project-links">
+                        <a
+                            href={selected.itch}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`itch-link ${selected.rarity.toLowerCase()}`}
+                        >
+                            Play on Itch.io
+                        </a>
 
-                    <a 
-                        href={selected.video}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`itch-link ${selected.rarity.toLowerCase()}`}
-                    >
-                        Watch Gameplay
-                    </a>
-
+                        {selected.video && (
+                            <button
+                                type="button"
+                                onClick={() => setVideoOpen(true)}
+                                className={`video-link ${selected.rarity.toLowerCase()}`}
+                            >
+                                Watch Demo
+                            </button>
+                        )}
+                    </div>
                 </div>
 
                 <div className="about-panel">
@@ -161,10 +159,9 @@ function App() {
                     <h2>Gameplay Programmer</h2>
 
                     <p>
-                        I build gameplay systems with a focus on responsiveness,
-                        readability, debugging, and player experience. My background
-                        includes Unreal Engine, VR/XR projects, QA testing, and team-based
-                        game development.
+                        I build gameplay systems with a focus on responsiveness, readability,
+                        debugging, and player experience. My background includes Unreal
+                        Engine, VR/XR projects, QA testing, and team-based game development.
                     </p>
 
                     <div className="stats">
@@ -172,17 +169,14 @@ function App() {
                             <strong>5</strong>
                             <span>Projects</span>
                         </div>
-
                         <div>
                             <strong>UE5</strong>
                             <span>Engine</span>
                         </div>
-
                         <div>
                             <strong>Unity</strong>
                             <span>Engine</span>
                         </div>
-
                         <div>
                             <strong>QA</strong>
                             <span>Experience</span>
@@ -205,7 +199,7 @@ function App() {
                             onMouseLeave={() => setHovered(null)}
                             whileHover={{ y: -28, scale: 1.05 }}
                             style={{
-                                rotate: `${(index - 1) * 7}deg`,
+                                rotate: `${(index - 2) * 6}deg`,
                                 zIndex:
                                     hovered === project.title
                                         ? 10
@@ -268,14 +262,52 @@ function App() {
 
                 <div className="contact-links">
                     <a href="mailto:russpared@gmail.com">Email</a>
-                    <a href="https://www.linkedin.com/in/russell-paredes-5b6348232/" target="_blank">
+                    <a
+                        href="https://www.linkedin.com/in/russell-paredes-5b6348232/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         LinkedIn
                     </a>
-                    <a href="https://github.com/Tsurei" target="_blank">
+                    <a
+                        href="https://github.com/Tsurei"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         GitHub
+                    </a>
+
+                    <a
+                        href="https://raikabe.itch.io"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Itch
                     </a>
                 </div>
             </section>
+
+            {videoOpen && (
+                <div className="video-modal" onClick={() => setVideoOpen(false)}>
+                    <div
+                        className="video-modal-content"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button
+                            className="close-video"
+                            onClick={() => setVideoOpen(false)}
+                        >
+                            ×
+                        </button>
+
+                        <iframe
+                            src={selected.video}
+                            title={`${selected.title} Gameplay Demo`}
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }

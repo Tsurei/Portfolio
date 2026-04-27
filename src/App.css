@@ -13,15 +13,15 @@ body {
     background: radial-gradient(circle at top, rgba(56, 189, 248, 0.22), transparent 30%), linear-gradient(180deg, #020617, #0f172a 45%, #111827);
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("/images/background.jpg") center/cover no-repeat;
-    opacity: 0.14;
-    z-index: 0;
-    pointer-events: none;
-}
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url("/images/background.jpg") center / cover no-repeat;
+        opacity: 0.14;
+        z-index: 0;
+        pointer-events: none;
+    }
 
 a {
     color: inherit;
@@ -78,8 +78,7 @@ nav {
 }
 
     nav a,
-    .contact-links a,
-    .itch-link {
+    .contact-links a {
         padding: 10px 14px;
         border: 1px solid #334155;
         border-radius: 14px;
@@ -89,8 +88,7 @@ nav {
     }
 
         nav a:hover,
-        .contact-links a:hover,
-        .itch-link:hover {
+        .contact-links a:hover {
             border-color: #67e8f9;
             color: #67e8f9;
             background: rgba(103, 232, 249, 0.08);
@@ -121,36 +119,35 @@ nav {
     padding: 28px;
 }
 
-    /* ---------- Selected Project Rarity ---------- */
+    /* ---------- SELECTED PROJECT RARITY ---------- */
 
     .selected-card.common {
         border-color: #94a3b8;
         background: rgba(2, 6, 23, 0.68);
-        box-shadow: 0 0 24px rgba(148, 163, 184, 0.14);
     }
 
     .selected-card.rare {
         border-color: #3b82f6;
-        background: linear-gradient(180deg, rgba(30,41,59,0.88), rgba(2,6,23,0.82)), rgba(59,130,246,0.08);
-        box-shadow: 0 0 35px rgba(59, 130, 246, 0.18);
-        animation: softPulse 3.2s ease-in-out infinite;
+        background: linear-gradient(180deg, rgba(30, 41, 59, 0.88), rgba(2, 6, 23, 0.82)), rgba(59, 130, 246, 0.08);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.32), 0 0 55px rgba(59, 130, 246, 0.4), 0 0 90px rgba(59, 130, 246, 0.18);
+        animation: softPulse 2.8s ease-in-out infinite;
     }
 
     .selected-card.epic {
         border-color: #a855f7;
-        background: linear-gradient(180deg, rgba(30,27,75,0.88), rgba(2,6,23,0.82)), rgba(168,85,247,0.08);
-        box-shadow: 0 0 38px rgba(168, 85, 247, 0.20);
-        animation: softPulse 3.2s ease-in-out infinite;
+        background: linear-gradient(180deg, rgba(30, 27, 75, 0.88), rgba(2, 6, 23, 0.82)), rgba(168, 85, 247, 0.08);
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.32), 0 0 55px rgba(168, 85, 247, 0.42), 0 0 90px rgba(168, 85, 247, 0.2);
+        animation: softPulse 2.8s ease-in-out infinite;
     }
 
     .selected-card.legendary {
         border-color: #f59e0b;
-        background: linear-gradient(180deg, rgba(69,26,3,0.88), rgba(2,6,23,0.82)), rgba(245,158,11,0.08);
-        box-shadow: 0 0 42px rgba(245, 158, 11, 0.22);
-        animation: softPulse 3.2s ease-in-out infinite;
+        background: linear-gradient(180deg, rgba(69, 26, 3, 0.88), rgba(2, 6, 23, 0.82)), rgba(245, 158, 11, 0.08);
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.35), 0 0 55px rgba(245, 158, 11, 0.45), 0 0 90px rgba(245, 158, 11, 0.22);
+        animation: softPulse 2.8s ease-in-out infinite;
     }
 
-    /* ---------- Headings ---------- */
+    /* ---------- HEADINGS ---------- */
 
     .selected-card h2,
     .about-panel h2,
@@ -164,7 +161,7 @@ nav {
     color: #cbd5e1;
 }
 
-/* ---------- Selected Image ---------- */
+/* ---------- SELECTED IMAGE ---------- */
 
 .selected-card img {
     width: 100%;
@@ -175,7 +172,7 @@ nav {
     border: 1px solid rgba(103, 232, 249, 0.25);
 }
 
-/* ---------- Text ---------- */
+/* ---------- TEXT ---------- */
 
 .description,
 .about-panel p,
@@ -194,65 +191,63 @@ nav {
     color: #e2e8f0;
 }
 
-/* ---------- Itch Button ---------- */
+/* ---------- PROJECT LINKS ---------- */
 
-.itch-link {
-    display: inline-block;
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-top: 18px;
+}
+
+.itch-link,
+.video-link {
+    display: inline-block;
     padding: 10px 14px;
     border-radius: 14px;
     font-weight: 800;
     transition: 0.2s ease;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
 }
 
-    /* Common */
-    .itch-link.common {
+    .itch-link.common,
+    .video-link.common {
         border: 1px solid #64748b;
         color: #cbd5e1;
     }
 
-        .itch-link.common:hover {
-            background: rgba(148,163,184,0.10);
-        }
-
-    /* Rare */
-    .itch-link.rare {
+    .itch-link.rare,
+    .video-link.rare {
         border: 1px solid #3b82f6;
         color: #60a5fa;
-        animation: softPulse 3.2s ease-in-out infinite;
     }
 
-        .itch-link.rare:hover {
-            background: rgba(59,130,246,0.12);
-        }
-
-    /* Epic */
-    .itch-link.epic {
+    .itch-link.epic,
+    .video-link.epic {
         border: 1px solid #a855f7;
         color: #c084fc;
-        animation: softPulse 3.2s ease-in-out infinite;
     }
 
-        .itch-link.epic:hover {
-            background: rgba(168,85,247,0.12);
-        }
-
-    /* Legendary */
-    .itch-link.legendary {
+    .itch-link.legendary,
+    .video-link.legendary {
         border: 1px solid #f59e0b;
         color: #fde68a;
-        animation: softPulse 3.2s ease-in-out infinite;
     }
 
-        .itch-link.legendary:hover {
-            background: rgba(245,158,11,0.12);
-        }
+    .itch-link:hover,
+    .video-link:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.05);
+    }
 
 /* ---------- PROFILE STATS ---------- */
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 14px;
     margin-top: 28px;
 }
@@ -296,6 +291,7 @@ nav {
 }
 
 .project-card {
+    position: relative;
     width: 240px;
     height: 350px;
     margin: 0 -18px;
@@ -311,32 +307,43 @@ nav {
     transition: 0.22s ease;
 }
 
-    /* COMMON */
+    /* Card shine */
+    .project-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( 120deg, transparent 30%, rgba(255, 255, 255, 0.12), transparent 70% );
+        transform: translateX(-120%);
+        transition: 0.55s ease;
+        pointer-events: none;
+    }
+
+    .project-card:hover::after {
+        transform: translateX(120%);
+    }
+
     .project-card.common:hover,
     .project-card.common.active {
         border-color: #94a3b8;
-        box-shadow: 0 0 24px rgba(148,163,184,0.28);
+        box-shadow: 0 0 24px rgba(148, 163, 184, 0.28);
     }
 
-    /* RARE */
     .project-card.rare:hover,
     .project-card.rare.active {
         border-color: #3b82f6;
-        box-shadow: 0 0 28px rgba(59,130,246,0.35);
+        box-shadow: 0 0 28px rgba(59, 130, 246, 0.35);
     }
 
-    /* EPIC */
     .project-card.epic:hover,
     .project-card.epic.active {
         border-color: #a855f7;
-        box-shadow: 0 0 30px rgba(168,85,247,0.38);
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.38);
     }
 
-    /* LEGENDARY */
     .project-card.legendary:hover,
     .project-card.legendary.active {
         border-color: #f59e0b;
-        box-shadow: 0 0 34px rgba(245,158,11,0.42);
+        box-shadow: 0 0 34px rgba(245, 158, 11, 0.42);
     }
 
     .project-card img {
@@ -356,17 +363,6 @@ nav {
     gap: 8px;
 }
 
-.card-top span {
-    display: inline-block;
-    padding: 5px 9px;
-    border-radius: 999px;
-    background: rgba(103, 232, 249, 0.15);
-    color: #67e8f9;
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
 .project-card h3 {
     margin: 12px 0 4px;
     font-size: 28px;
@@ -378,6 +374,8 @@ nav {
     font-size: 14px;
 }
 
+/* ---------- RARITY TAG ---------- */
+
 .rarity {
     display: inline-block;
     padding: 5px 9px;
@@ -388,30 +386,26 @@ nav {
     letter-spacing: 0.08em;
 }
 
-    /* Common */
     .rarity.common {
-        background: rgba(148,163,184,0.15);
+        background: rgba(148, 163, 184, 0.15);
         color: #cbd5e1;
         border: 1px solid #64748b;
     }
 
-    /* Rare */
     .rarity.rare {
-        background: rgba(59,130,246,0.15);
+        background: rgba(59, 130, 246, 0.15);
         color: #60a5fa;
         border: 1px solid #3b82f6;
     }
 
-    /* Epic */
     .rarity.epic {
-        background: rgba(168,85,247,0.15);
+        background: rgba(168, 85, 247, 0.15);
         color: #c084fc;
         border: 1px solid #a855f7;
     }
 
-    /* Legendary */
     .rarity.legendary {
-        background: rgba(251,191,36,0.18);
+        background: rgba(251, 191, 36, 0.18);
         color: #fde68a;
         border: 1px solid #f59e0b;
     }
@@ -423,58 +417,14 @@ nav {
     font-weight: 900;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    background: rgba(34,197,94,0.15);
+    background: rgba(34, 197, 94, 0.15);
     color: #86efac;
     border: 1px solid #22c55e;
 }
 
-/* ---------- PROJECT LINKS ----------*/
-.project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 18px;
-}
-
-.video-link {
-    display: inline-block;
-    padding: 10px 14px;
-    border-radius: 14px;
-    font-weight: 800;
-    transition: 0.2s ease;
-}
-
-    /* Match rarity */
-
-    .video-link.common {
-        border: 1px solid #64748b;
-        color: #cbd5e1;
-    }
-
-    .video-link.rare {
-        border: 1px solid #3b82f6;
-        color: #60a5fa;
-    }
-
-    .video-link.epic {
-        border: 1px solid #a855f7;
-        color: #c084fc;
-    }
-
-    .video-link.legendary {
-        border: 1px solid #f59e0b;
-        color: #fde68a;
-    }
-
-    .video-link:hover {
-        transform: translateY(-2px);
-        background: rgba(255,255,255,0.05);
-    }
-
 /* ---------- TAGS ---------- */
 
 .tags,
-.skill-grid,
 .contact-links {
     display: flex;
     flex-wrap: wrap;
@@ -521,6 +471,52 @@ nav {
     margin-top: 20px;
 }
 
+/* ---------- VIDEO MODAL ---------- */
+
+.video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(2, 6, 23, 0.86);
+    backdrop-filter: blur(10px);
+}
+
+.video-modal-content {
+    position: relative;
+    width: min(100%, 950px);
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(103, 232, 249, 0.35);
+    border-radius: 24px;
+    overflow: hidden;
+    background: #020617;
+    box-shadow: 0 0 60px rgba(103, 232, 249, 0.25);
+}
+
+    .video-modal-content iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+.close-video {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    background: rgba(2, 6, 23, 0.8);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 900px) {
@@ -537,6 +533,11 @@ nav {
         margin-top: 24px;
     }
 
+    .stats,
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
     .card-hand {
         flex-direction: column;
         align-items: center;
@@ -548,10 +549,6 @@ nav {
         rotate: 0deg !important;
     }
 
-    .skill-grid {
-        grid-template-columns: 1fr;
-    }
-
     .selected-card h2,
     .about-panel h2,
     .skills h2,
@@ -560,18 +557,21 @@ nav {
     }
 }
 
-/* ---------- Glow Animation ---------- */
+/* ---------- ANIMATION ---------- */
 
 @keyframes softPulse {
     0% {
         filter: brightness(1);
+        transform: translateY(0);
     }
 
     50% {
-        filter: brightness(1.06);
+        filter: brightness(1.08);
+        transform: translateY(-2px);
     }
 
     100% {
         filter: brightness(1);
+        transform: translateY(0);
     }
 }
