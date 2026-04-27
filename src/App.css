@@ -539,20 +539,17 @@ nav {
     }
 
     .card-hand {
+        justify-content: flex-start;
+
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 16px;
+        gap: 4vw;
 
         overflow-x: auto;
         overflow-y: hidden;
 
+        padding: 4vw;
         min-height: auto;
-        padding: 20px 12px 30px;
-
-        scroll-snap-type: auto;
-        padding: 20px 12px 30px;
 
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
@@ -573,12 +570,17 @@ nav {
         }
 
     .project-card {
-        flex: 0 0 260px;
-        width: 260px;
-        height: 360 px;
-        margin: 0;
+        flex: 0 0 82vw;
+        width: 82vw;
 
-        offset-rotate: 0deg !important;
+        height: clamp(360px, 118vw, 500px);
+
+        max-width: 340px;
+        min-width: 250px;
+
+        margin: 0;
+        rotate: 0deg !important;
+
         scroll-snap-align: center;
     }
 
