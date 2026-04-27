@@ -10,6 +10,7 @@ const projects = [
         rarity: "Legendary",
         image: "/images/ironrise.jpg",
         itch: "https://aidendes.itch.io/iron-rise",
+        video: "https://youtube.com",
         tags: ["Camera Systems", "Gameplay", "Blueprints"],
         description:
             "Developed a room-based 2.5D camera system for a team-built action platformer, improving visibility, transitions, and player framing.",
@@ -27,6 +28,7 @@ const projects = [
         rarity: "Epic",
         image: "/images/shipwreck.jpg",
         itch: "https://aidendes.itch.io/shipwreck",
+        video: "https://youtube.com",
         tags: ["VR", "Target Systems", "OOP"],
         description:
             "Created a modular VR target system with configurable spawning and inheritance-based target classes.",
@@ -44,6 +46,7 @@ const projects = [
         rarity: "Epic",
         image: "/images/trashout.jpg",
         itch: "https://raikabe.itch.io/trash-out",
+        video: "https://youtube.com",
         tags: ["VR Physics", "Interaction", "Gameplay"],
         description:
             "Developed a VR rope magnet mechanic using custom physics and object attraction systems.",
@@ -58,9 +61,10 @@ const projects = [
         title: "Mutant",
         role: "Gameplay Programmer",
         engine: "Unreal Engine 5",
-        rarity: "Rare",
+        rarity: "Epic",
         image: "/images/mutant.jpg",
         itch: "https://densev.itch.io/mutant",
+        video: "https://youtube.com",
         tags: ["Controls", "Combat", "Charge Attacks"],
         description:
             "Developed player controls and charge attack behavior for a 3D top-down sci-fi shooter focused on a boss battle encounter.",
@@ -78,6 +82,7 @@ const projects = [
         rarity: "Rare",
         image: "/images/alkaline.jpg",
         itch: "https://blkysuity-sh.itch.io/alkaline",
+        video: "https://youtube.com",
         tags: ["Puzzle Design", "Mechanics", "2D Platformer"],
         description:
             "Worked on gameplay mechanics and puzzle level design for a 2D puzzle-platformer set in a run-down space laboratory.",
@@ -139,6 +144,16 @@ function App() {
                     >
                         Play on Itch.io
                     </a>
+
+                    <a 
+                        href={selected.video}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`itch-link ${selected.rarity.toLowerCase()}`}
+                    >
+                        Watch Gameplay
+                    </a>
+
                 </div>
 
                 <div className="about-panel">
@@ -193,9 +208,9 @@ function App() {
                                 rotate: `${(index - 1) * 7}deg`,
                                 zIndex:
                                     hovered === project.title
-                                        ? 50
+                                        ? 10
                                         : selected.title === project.title
-                                            ? 40
+                                            ? 5
                                             : index,
                             }}
                         >

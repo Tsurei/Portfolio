@@ -428,6 +428,49 @@ nav {
     border: 1px solid #22c55e;
 }
 
+/* ---------- PROJECT LINKS ----------*/
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.video-link {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+    /* Match rarity */
+
+    .video-link.common {
+        border: 1px solid #64748b;
+        color: #cbd5e1;
+    }
+
+    .video-link.rare {
+        border: 1px solid #3b82f6;
+        color: #60a5fa;
+    }
+
+    .video-link.epic {
+        border: 1px solid #a855f7;
+        color: #c084fc;
+    }
+
+    .video-link.legendary {
+        border: 1px solid #f59e0b;
+        color: #fde68a;
+    }
+
+    .video-link:hover {
+        transform: translateY(-2px);
+        background: rgba(255,255,255,0.05);
+    }
+
 /* ---------- TAGS ---------- */
 
 .tags,
@@ -521,17 +564,14 @@ nav {
 
 @keyframes softPulse {
     0% {
-        transform: translateY(0px);
         filter: brightness(1);
     }
 
     50% {
-        transform: translateY(-2px);
-        filter: brightness(1.08);
+        filter: brightness(1.06);
     }
 
     100% {
-        transform: translateY(0px);
         filter: brightness(1);
     }
 }
