@@ -521,17 +521,21 @@ nav {
 
 @media (max-width: 900px) {
     .page {
-        padding: 14px;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        overflow-x: hidden;
     }
 
     .hud {
         display: block;
-        padding: 16px;
+        padding: 14px;
         border-radius: 18px;
     }
 
         .hud h1 {
-            font-size: 22px;
+            font-size: 24px;
+            line-height: 1.1;
         }
 
         .hud p {
@@ -545,11 +549,12 @@ nav {
 
     nav a {
         font-size: 14px;
-        padding: 9px 11px;
+        padding: 8px 10px;
     }
 
     .showcase {
         display: block;
+        margin-top: 18px;
     }
 
     .selected-card,
@@ -560,8 +565,10 @@ nav {
     }
 
     .selected-card,
-    .about-panel {
-        padding: 18px;
+    .about-panel,
+    .skills,
+    .contact {
+        padding: 16px;
     }
 
         .selected-card h2,
@@ -569,7 +576,7 @@ nav {
         .skills h2,
         .contact h2 {
             font-size: 30px;
-            line-height: 1.05;
+            line-height: 1.1;
         }
 
         .subtitle,
@@ -587,21 +594,22 @@ nav {
         }
 
     .about-panel {
-        margin-top: 18px;
+        margin-top: 16px;
     }
 
-    .stats,
-    .skill-grid {
-        grid-template-columns: 1fr 1fr;
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
         .stats div {
-            padding: 14px;
+            padding: 12px;
         }
 
     .hand-section {
-        margin-top: 34px;
         width: 100%;
+        max-width: 100%;
+        margin-top: 32px;
         overflow-x: hidden;
     }
 
@@ -609,11 +617,13 @@ nav {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        gap: 16px;
+        align-items: stretch;
+        gap: 14px;
         width: 100%;
+        max-width: 100%;
         overflow-x: auto;
         overflow-y: hidden;
-        padding: 20px 8px 28px;
+        padding: 18px 8px 28px;
         min-height: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
@@ -624,11 +634,15 @@ nav {
         width: 78vw;
         height: 360px;
         max-width: 310px;
-        min-width: 245px;
+        min-width: 240px;
         margin: 0;
         rotate: 0deg !important;
         scroll-snap-align: center;
     }
+
+        .project-card img {
+            height: 135px;
+        }
 
         .project-card h3 {
             font-size: 24px;
@@ -638,20 +652,24 @@ nav {
             font-size: 13px;
         }
 
-        .project-card img {
-            height: 135px;
-        }
+    .card-content {
+        padding: 14px;
+    }
 
     .skills,
     .contact {
-        margin-top: 40px;
-        padding: 20px;
+        margin-top: 36px;
     }
 
-    .skill-grid span {
-        font-size: 13px;
-        padding: 12px;
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
+
+        .skill-grid span {
+            font-size: 13px;
+            padding: 12px;
+        }
 
     .project-links {
         gap: 10px;
